@@ -1,0 +1,181 @@
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Admin",
+  "email": "admin@test.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+###Login as Admin
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "123456"
+}
+
+
+###Create user only admin
+POST http://localhost:5000/users/create-user
+Content-Type: application/json
+
+{
+  "name": "Analyst User",
+  "email": "analyst@test.com",
+  "password": "123456",
+  "role": "analyst"
+}
+
+### Get all users
+GET http://localhost:5000/users/get-users
+
+### Create record
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 5000,
+  "type": "income",
+  "category": "salary",
+  "date": "2025-01-01",
+  "notes": "monthly salary"
+}
+
+### Get all record
+
+GET http://localhost:5000/records/get-records
+
+###filter record
+GET http://localhost:5000/records/get-records?type=income
+
+###Update record
+PUT http://localhost:5000/records/update-record/69d13ea3557d27fa1e929778
+Content-Type: application/json
+
+{
+  "amount": 6000
+}
+
+### delete record
+DELETE http://localhost:5000/records/delete-record/69d13ea3557d27fa1e929778
+
+###Dashboard summary
+GET http://localhost:5000/dashboard/summary
+
+### Ctegory breakdown
+GET http://localhost:5000/dashboard/categories
+
+### monthly transaction
+GET http://localhost:5000/dashboard/trends
+
+### recent transactions
+GET http://localhost:5000/dashboard/recent
+
+### logout
+POST http://localhost:5000/auth/logout
+
+
+
+##############################################
+### Create Viewer
+POST http://localhost:5000/users/create-user
+Content-Type: application/json
+
+{
+  "name": "Analyst One",
+  "email": "analyst1@test.com",
+  "password": "123456",
+  "role": "analyst"
+}
+
+### Create Viewer
+POST http://localhost:5000/users/create-user
+Content-Type: application/json
+
+{
+  "name": "Viewer One",
+  "email": "viewer1@test.com",
+  "password": "123456",
+  "role": "viewer"
+}
+###
+POST http://localhost:5000/users/create-user
+Content-Type: application/json
+
+{
+  "name": "Analyst Two",
+  "email": "analyst2@test.com",
+  "password": "123456",
+  "role": "analyst"
+}
+
+### income records
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 5000,
+  "type": "income",
+  "category": "salary",
+  "date": "2025-01-01",
+  "notes": "January salary"
+}
+###
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 3000,
+  "type": "income",
+  "category": "freelance",
+  "date": "2025-02-10",
+  "notes": "Freelance project"
+}
+###
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 2000,
+  "type": "expense",
+  "category": "food",
+  "date": "2025-01-05",
+  "notes": "Groceries"
+}
+###
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 8000,
+  "type": "expense",
+  "category": "rent",
+  "date": "2025-01-03",
+  "notes": "House rent"
+}
+###
+POST http://localhost:5000/records/create-record
+Content-Type: application/json
+
+{
+  "amount": 1500,
+  "type": "expense",
+  "category": "transport",
+  "date": "2025-02-15",
+  "notes": "Travel expenses"
+}
+
+### dasboard
+GET http://localhost:5000/dashboard/summary
+
+### categories
+GET http://localhost:5000/dashboard/categories
+
+### trends
+GET http://localhost:5000/dashboard/trends
+
+### recent
+GET http://localhost:5000/dashboard/recent
